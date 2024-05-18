@@ -30,11 +30,16 @@ export class ProductService {
     return this.products.find((item) => item.id === Number(id))
   }
 
-  updateProduct(): string {
-    return 'update product'
+  updateProduct(productDto: ProductDto, id: number): Product {
+    const findIndex = this.products.findIndex((item) => item.id === Number(id));
+
+    this.products[findIndex].categoryId = productDto.categoryId
+    this.products[findIndex].productName = productDto.productName
+    this.products[findIndex].price = productDto.price
+    return this.products[findIndex]
   }
 
-  deleteProduct(): string {
-    return 'delete product'
+  deleteProduct(id: number): boolean {
+    return true
   }
 }
