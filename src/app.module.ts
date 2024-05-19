@@ -15,7 +15,7 @@ import { DataSource } from 'typeorm';
       username: 'root',
       password: '',
       database: 'hethongbanhang',
-      entities: [],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
   ],
